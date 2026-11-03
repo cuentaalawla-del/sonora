@@ -18,6 +18,15 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Arreglar ficheros del proyecto
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          rm -f local.properties
+          [ -f .env.example ] || touch .env.example
+          if [ ! -f debug.keystore ]; then
+            keytool -genkeypair -keystore debug.keystore -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          fi
+
       - uses: android-actions/setup-android@v3
 
       - uses: gradle/actions/setup-gradle@v4
