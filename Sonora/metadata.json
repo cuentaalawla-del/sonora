@@ -1,0 +1,6 @@
+{
+  "name": "Sonora",
+  "description": "Aplicación de streaming musical de alta fidelidad estilo Spotify Premium con búsqueda en tiempo real, integración con YouTube, listas de reproducción persistentes y biblioteca.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
